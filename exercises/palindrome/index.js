@@ -10,9 +10,7 @@
 function palindrome(str) {
   return str
     .split('')
-    .reduce((acc, cur) => cur + acc) == str
-      ? true 
-      : false;
+    .reduce((acc, cur) => cur + acc) === str;
 }
 
 module.exports = palindrome;
