@@ -8,9 +8,25 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
+//* forEach
+// function chunk(array, size) {
+//   const arr = [];
+//   array.forEach(el => {
+//     const last = arr[arr.length - 1];
+
+//     if (!last || last.length == size) {
+//       arr.push([el])
+//     } else {
+//       last.push(el)
+//     }
+//   })
+//   return arr;
+// }
+
+//* for of loop
 function chunk(array, size) {
   const arr = [];
-  array.forEach(el => {
+  for (let el of array) {
     const last = arr[arr.length - 1];
 
     if (!last || last.length == size) {
@@ -18,8 +34,9 @@ function chunk(array, size) {
     } else {
       last.push(el)
     }
-  })
+  }
   return arr;
 }
+
 
 module.exports = chunk;
