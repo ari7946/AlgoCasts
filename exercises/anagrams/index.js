@@ -30,12 +30,12 @@
 function anagrams(stringA, stringB) {
   stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('');
   stringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('');
-  let count = 0;
 
   if (stringA.length !== stringB.length) {
     return false
   }
-  
+
+  let count = 0;
   for (let charA of stringA) {
     for (let charB of stringB) {
       if (charA === charB) {
