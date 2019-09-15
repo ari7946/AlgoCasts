@@ -28,27 +28,21 @@
 // }
 
 function anagrams(stringA, stringB) {
-stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('');
-stringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('');
-if (stringA.length !== stringB.length) {
-  return false
-}
-let count = 0;
-for (let charA of stringA) {
-  var found = false;
-
-
-  for (let charB of stringB) {
-    if (!found) {
+  stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('');
+  stringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('');
+  if (stringA.length !== stringB.length) {
+    return false
+  }
+  let count = 0;
+  for (let charA of stringA) {
+    for (let charB of stringB) {
       if (charA === charB) {
         count++;
-        found = true
+        break;
       }
     }
   }
-  found = false;
-}
-return count == stringA.length ? true : false;
+  return count == stringA.length ? true : false;
 }
 
 module.exports = anagrams;
