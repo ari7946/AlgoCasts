@@ -44,7 +44,7 @@ function anagrams(stringA, stringB) {
       }
     }
   }
-  return count == stringA.length;
-}
+  return count === stringA.length;
+};
 
 module.exports = anagrams;
