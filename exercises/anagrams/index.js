@@ -40,7 +40,7 @@ function anagrams(stringA, stringB) {
     for (let charB of stringB) {
       if (charA === charB) {
         count++;
-        break;
+        break;      
       }
     }
   }
@@ -48,3 +48,8 @@ function anagrams(stringA, stringB) {
 };
 
 module.exports = anagrams;
+
+// Python tutor link to nested for loop solution. 
+http://www.pythontutor.com/live.html#code=function%20anagrams%28stringA,%20stringB%29%20%7B%0A%20%20stringA%20%3D%20stringA.replace%28/%5B%5E%5Cw%5D/g,%20''%29.toLowerCase%28%29.split%28''%29%3B%0A%20%20stringB%20%3D%20stringB.replace%28/%5B%5E%5Cw%5D/g,%20''%29.toLowerCase%28%29.split%28''%29%3B%0A%0A%20%20if%20%28stringA.length%20!%3D%3D%20stringB.length%29%20%7B%0A%20%20%20%20return%20false%0A%20%20%7D%0A%0A%20%20let%20count%20%3D%200%3B%0A%20%20for%20%28let%20charA%20of%20stringA%29%20%7B%0A%20%20%20%20for%20%28let%20charB%20of%20stringB%29%20%7B%0A%20%20%20%20%20%20if%20%28charA%20%3D%3D%3D%20charB%29%20%7B%0A%20%20%20%20%20%20%20%20count%2B%2B%3B%0A%20%20%20%20%20%20%20%20break%3B%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%20%20return%20count%20%3D%3D%3D%20stringA.length%3B%0A%7D%3B%0A%0A%20anagrams%28'RAIL!%20SAFETY!',%20'fairy%20tales'%29%20%0Aanagrams%28'Hi%20there',%20'Bye%20there'%29%20&cumulative=false&curInstr=166&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false
+
+
