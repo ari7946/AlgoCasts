@@ -17,6 +17,18 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+  let initialValues = [];
+  while (n) {
+    initialValues.push(" ");
+    n--
+  }
+  const steps = initialValues.map((step, i) => {
+    initialValues[i] = '#';
+    return initialValues.slice().join('');
+  })
+  steps.forEach(hey => console.log(hey));
+}
+
 
 module.exports = steps;
