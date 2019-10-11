@@ -7,7 +7,7 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
-//* creates character map
+//! ****reference code: creates character map
 // function maxChar(str) {
 //   const charMap = {};
 //   let max = 0;
@@ -26,6 +26,7 @@
 //   }
 //   return maxChar
 // }
+//! end of reference code to create characater map.
 
 // function anagrams(stringA, stringB) {
 //   stringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('');
@@ -100,7 +101,6 @@ function cleanString(str) {
     // join method converts array back to string and "joins" the chars
     .join('');
 }
-
 //! end of solution using sort method
 
 module.exports = anagrams;
