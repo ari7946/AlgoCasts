@@ -25,7 +25,7 @@ function steps(n) {
   }
   const steps = initialValues.map((step, i) => {
     initialValues[i] = '#';
-    return initialValues.slice().join('');
+    return initialValues.join('');
   })
   steps.forEach(hey => console.log(hey));
 }
