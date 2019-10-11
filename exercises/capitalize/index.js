@@ -10,7 +10,7 @@
 function capitalize(str) {
   return str
     .split('')
-    // if the previes element is a string of single space "str[i - 1] or if the index is 0, then to upperCase, otherwise return the char as it is."
+    // if the previous element is a string of single space "str[i - 1] or if the index is 0, then to upperCase, otherwise return the char as it is."
     .map((char, i) => {
       if (str[i - 1] === ' ' || i === 0) {
         return char.toUpperCase();
