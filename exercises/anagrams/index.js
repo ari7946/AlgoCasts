@@ -48,37 +48,60 @@
 // };
 
 //* Solution using a character map helper function
-function anagrams(stringA, stringB) {
-  const aCharMap = buildCharMap(stringA);
-  const bCharMap = buildCharMap(stringB);
+// function anagrams(stringA, stringB) {
+//   const aCharMap = buildCharMap(stringA);
+//   const bCharMap = buildCharMap(stringB);
 
-  // checks if the character maps have the same number of keys
-  if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
-    return false;
-  }
+//   // checks if the character maps have the same number of keys
+//   if (Object.keys(aCharMap).length !== Object.keys(bCharMap).length) {
+//     return false;
+//   }
 
-  // if there isn't a corresponding character in both char maps
-  // then return false
-  for (let char in aCharMap) {
-    if (aCharMap[char] !== bCharMap[char]) {
-      return false;
-    }
-  }
+//   // if there isn't a corresponding character in both char maps
+//   // then return false
+//   for (let char in aCharMap) {
+//     if (aCharMap[char] !== bCharMap[char]) {
+//       return false;
+//     }
+//   }
 
-  // else, return true;
-  return true;
-}
+//   // else, return true;
+//   return true;
+// }
 
-// helper function character map
-function buildCharMap(str) {
-  const charMap = {};
-  // remove any non-alphabetic characters and spaces. Then turn all chars to lowercase
-  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
-    charMap[char] = charMap[char] + 1 || 1;
-  }
-  return charMap;
-}
+// // helper function character map
+// function buildCharMap(str) {
+//   const charMap = {};
+//   // remove any non-alphabetic characters and spaces. Then turn all chars to lowercase
+//   for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
+//     charMap[char] = charMap[char] + 1 || 1;
+//   }
+//   return charMap;
+//}
 //! end of solution using character map helper function
+
+
+
+//* Solution using the SORT method
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+// "cleans" the string
+function cleanString(str) {
+  return str
+    .replace(/[^\w]/g, '')
+    .toLowerCase()
+    // split method turns string into array makes each char its own element by passing an empty string as its only argument
+    .split('')
+    // sort works on chars and numbers
+    // in this case it sorts alphabetically
+    .sort()
+    // join method converts array back to string and "joins" the chars
+    .join('');
+}
+
+//! end of solution using sort method
 
 module.exports = anagrams;
 
