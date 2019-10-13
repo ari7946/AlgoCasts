@@ -21,7 +21,7 @@
 //   let initialValues = [];
 //   while (n) {
 //     initialValues.push(" ");
-//     n--
+//     n--;
 //   }
 //   initialValues.forEach((step, i) => {
 //     initialValues[i] = '#';
