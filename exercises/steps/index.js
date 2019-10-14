@@ -34,22 +34,37 @@
 
 
 //* Solution using nested for loops
-function steps(n) {
-  for (let row = 0; row < n; row++) {
-    let stair = '';
+// function steps(n) {
+//   for (let row = 0; row < n; row++) {
+//     let stair = '';
 
-    for (let column = 0; column < n; column++) {
-      if (column <= row) {
-        stair += '#';
-      } else {
-        stair += ' ';
-      }
-    }
+//     for (let column = 0; column < n; column++) {
+//       if (column <= row) {
+//         stair += '#';
+//       } else {
+//         stair += ' ';
+//       }
+//     }
 
-    console.log(stair)
-  }
-}
+//     console.log(stair)
+//   }
+// }
 //! pythontutor for the above solution
 // http://www.pythontutor.com/javascript.html#code=function%20steps%28n%29%20%7B%0A%20%20for%20%28let%20row%20%3D%200%3B%20row%20%3C%20n%3B%20row%2B%2B%29%20%7B%0A%20%20%20%20let%20stair%20%3D%20''%3B%0A%0A%20%20%20%20for%20%28let%20column%20%3D%200%3B%20column%20%3C%20n%3B%20column%2B%2B%29%20%7B%0A%20%20%20%20%20%20if%20%28column%20%3C%3D%20row%29%20%7B%0A%20%20%20%20%20%20%20%20stair%20%2B%3D%20'%23'%3B%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20stair%20%2B%3D%20'%20'%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20console.log%28stair%29%0A%20%20%7D%0A%7D%0A%0Asteps%283%29%3B&curInstr=57&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D
+
+
+function steps(n, row = 0, stair = '') {
+  if (n === row) {
+    return;
+  }
+
+  if (n === stair.length) {
+    console.log(stair);
+    return steps(n, row + 1);
+  }
+
+  const add = stair.length <= row ? '#' : ' ';
+  steps(n, row, stair + add);
+}
 
 module.exports = steps;
