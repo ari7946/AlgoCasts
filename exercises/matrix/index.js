@@ -15,6 +15,32 @@
 //     [11, 16, 15, 6],
 //     [10,  9,  8, 7]]
 
-function matrix(n) {}
+function matrix(n) {
+  let counter1 = n + (n - 1);
+  const total = n * n;
+  const arr = [];
+
+  let num = n;
+  while (num) {
+    arr.push("");
+    num--;
+  }
+
+  const matrix = arr.map((el, i) => {
+    let counter1 = n + (n - 1);
+    return arr.map((ele, ii) => {
+      if (i + 1 === n) {
+        return counter1++
+      } else if (i == 0) {
+        return ii + 1
+      }
+    })
+  });
+
+  //reverse the last array
+  matrix[matrix.length - 1].reverse();
+
+  return matrix;
+}
 
 module.exports = matrix;
