@@ -7,12 +7,25 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+// function vowels(str) {
+//   return str
+//     .toLowerCase()
+//     .split('')
+//     .filter(el => ['a', 'e', 'i', 'o', 'u'].includes(el))
+//     .length;
+// }
+
+
+//* Solution using a for loop
 function vowels(str) {
-  return str
-    .toLowerCase()
-    .split('')
-    .filter(el => ['a', 'e', 'i', 'o', 'u'].includes(el))
-    .length;
+  let count = 0;
+  const checker = ['a', 'e', 'i','o', 'u'];
+  for (let char of str.toLowerCase()) {
+    if (checker.includes(char)) {
+      count++;
+    }
+  }
+  return count;
 }
 
 module.exports = vowels;
