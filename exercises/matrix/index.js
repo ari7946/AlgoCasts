@@ -16,7 +16,6 @@
 //     [10,  9,  8, 7]]
 
 function matrix(n) {
-  let counter1 = n + (n - 1);
   const total = n * n;
   const arr = [];
 
@@ -28,10 +27,13 @@ function matrix(n) {
 
   const matrix = arr.map((el, i) => {
     let counter1 = n + (n - 1);
+
     return arr.map((ele, ii) => {
+      //last array
       if (i + 1 === n) {
         return counter1++
-      } else if (i == 0) {
+      } //first array
+      else if (i == 0) {
         return ii + 1
       }
     })
@@ -39,7 +41,12 @@ function matrix(n) {
 
   //reverse the last array
   matrix[matrix.length - 1].reverse();
-
+  if (matrix.length - 2 === 1) {
+    matrix[1][0] = matrix[2][0] + 1
+    matrix[1][1] = matrix[1][0] + 1
+    matrix[1][2] = matrix[0][2] + 1
+  }
+  
   return matrix;
 }
 
