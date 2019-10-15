@@ -18,15 +18,15 @@
 //       '####'
 
 // function steps(n) {
-//   let initialValues = [];
-//   while (n) {
-//     initialValues.push(" ");
-//     n--;
-//   }
-//   initialValues.forEach((step, i) => {
-//     initialValues[i] = '#';
-//     console.log(initialValues.join(''));
-//   })
+  // let initialValues = [];
+  // while (n) {
+  //   initialValues.push(" ");
+  //   n--;
+  // }
+  // initialValues.forEach((step, i) => {
+  //   initialValues[i] = '#';
+  //   console.log(initialValues.join(''));
+  // })
 
 // }
 //! pythontutor for above solution
@@ -87,6 +87,7 @@ function steps(n, initialValues = [], flag = true, index = 0) {
       num--;
     }
     flag = false;
+
   }
   // replace the empty string with a pound
   initialValues[index] = '#';
