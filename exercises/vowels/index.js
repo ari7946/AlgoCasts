@@ -11,9 +11,7 @@ function vowels(str) {
   return str
     .toLowerCase()
     .split('')
-    .filter(el => {
-      return el == "a" || el == "e" || el == "i" || el == "o" || el == "u"
-    })
+    .filter(el => ['a', 'e', 'i', 'o', 'u'].includes(el))
     .length;
 }
 
