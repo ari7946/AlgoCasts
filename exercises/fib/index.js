@@ -66,6 +66,9 @@ const fib = memoize(slowFib)
 //! pythontutor link for above recursive solution
 http://www.pythontutor.com/live.html#code=function%20fib%28n%29%20%7B%0A%20%20if%20%28n%20%3C%202%29%20%7B%0A%20%20%20%20%20%20return%20n%0A%20%20%7D%0A%20%20let%20first%20%3D%20fib%28n%20-%201%29%3B%0A%20%20let%20second%20%3D%20fib%28n%20-%202%29%3B%0A%20%20return%20first%20%2B%20second%3B%0A%7D%0A%0A%0A%0Afib%284%29&cumulative=false&curInstr=35&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false
 
+//! good resource on memoization
+https://scotch.io/tutorials/understanding-memoization-in-javascript
+
 //! pythontutor link for above solution using cache
 //http://www.pythontutor.com/javascript.html#code=function%20memoize%28fn%29%20%7B%0A%20%20const%20cache%20%3D%20%7B%7D%3B%0A%20%20return%20function%28...args%29%20%7B%0A%20%20%20%20if%20%28cache%5Bargs%5D%29%20%7B%0A%20%20%20%20%20%20return%20cache%5Bargs%5D%3B%0A%20%20%20%20%7D%0A%20%20%20%20const%20result%20%3D%20fn.apply%28this,%20args%29%3B%0A%20%20%20%20cache%5Bargs%5D%20%3D%20result%3B%0A%20%20%20%20return%20result%3B%0A%20%20%7D%0A%7D%0A%0Afunction%20slowFib%28n%29%20%7B%0A%20%20if%20%28n%20%3C%202%29%20%7B%0A%20%20%20%20return%20n%0A%20%20%7D%0A%20%20let%20first%20%3D%20fib%28n%20-%201%29%3B%0A%20%20let%20second%20%3D%20fib%28n%20-%202%29%3B%0A%20%20return%20first%20%2B%20second%3B%0A%7D%0A%0Aconst%20fib%20%3D%20memoize%28slowFib%29%0Afib%284%29&mode=edit&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D
 module.exports = fib;
