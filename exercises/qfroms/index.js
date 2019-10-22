@@ -53,6 +53,7 @@ class Queue {
   }
 }
 
-
+// Queue: push/unshift vs. shift/pop vs. two push/pop stacks
+// https://jsperf.com/queue-push-unshift-vs-shift-pop
 
 module.exports = Queue;
