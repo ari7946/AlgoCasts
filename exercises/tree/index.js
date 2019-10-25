@@ -10,8 +10,55 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 
-class Node {}
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.children = [];
+  }
 
-class Tree {}
+  add(data) {
+    const node = new Node(data);
+    this.children.push(node);
+  }
+
+  remove(data) {
+    this.children = this.children.filter(node => node.data !== data);
+  }
+
+}
+
+class Tree {
+  constructor() {
+    this.root = null;
+  }
+
+  // 1: stick root into array
+  // 2: while there is elements in array
+  //   2.a: take out first element
+  //   2.b: retrieve children of element
+  //   2.c call function provided w/ traverse method on the element
+  // 3: repeat step 2 untill array is empty.
+  traverseBF(fn) {
+    const arr = [this.root]
+    while(arr.length) {
+      // shift removes first element from array and returns it.
+      const node = arr.shift();
+
+      // alternative solution
+      // for (let child of node.children) {
+      //   arr.push(child);
+      // }
+
+      // shorter syntax using spread operator
+      // arr.push(...node.children);
+
+      // third solution using apply
+      arr.push.apply(arr, node.children);
+
+      // finally call the function passed in to each node.
+      fn(node)
+    }
+  }
+}
 
 module.exports = { Tree, Node };
