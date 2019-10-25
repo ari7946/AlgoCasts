@@ -32,6 +32,7 @@ class Tree {
     this.root = null;
   }
 
+  //! Steps for BF traversal
   // 1: stick root into array
   // 2: while there is elements in array
   //   2.a: take out first element
@@ -56,7 +57,7 @@ class Tree {
       arr.push.apply(arr, node.children);
 
       // finally call the function passed in to each node.
-      fn(node)
+      fn(node);
     }
   }
 }
