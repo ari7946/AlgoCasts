@@ -16,6 +16,7 @@ class LinkedList {
     this.head = null;
   }
 
+  //* insertAt(data, 0)
   insertFirst(data) {
     // the head is a reference to the most recently added node(not the one currently in process of being added)
     // the head is passed in the node instantiation to be assigned to next property
@@ -41,10 +42,12 @@ class LinkedList {
     return counter;
   }
 
+  //* getAt(0)
   getFirst() {
     return this.head;
   }
   
+  //* getAt(this.size() - 1)
   getLast() {
     let node = this.head;
     if (!this.head) {
@@ -61,11 +64,13 @@ class LinkedList {
     this.head = null;
   }
 
+  //* removeAt(0)
   removeFirst() {
     if (!this.head) return null;
     this.head = this.head.next;
   }
 
+  //* removeAt(this.size() - 1)
   removeLast() {
     if (!this.head) {
       return;
@@ -87,6 +92,7 @@ class LinkedList {
     }
   }
 
+  //* insertAt(data,this.size - 1)
   insertLast(data) {
     if (!this.head) {
       this.head = new Node(data);
@@ -152,6 +158,16 @@ class LinkedList {
       const newNode = new Node(data, nextNode);
       previous.next = newNode;
     }
+  }
+
+  forEach(fn) {
+    let node = this.head;
+    
+    while (node) {
+      fn(node);
+      node = node.next;
+    }
+    return;
   }
 }
 
