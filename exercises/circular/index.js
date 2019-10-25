@@ -23,12 +23,9 @@ function circular(list) {
     if (slow === fast) {
       return true;
     }
-    if (!fast.next || !fast.next) {
-      return false;
-    }
   }
   
-  return slow;
+  return false;
 }
 
-//module.exports = circular;
+module.exports = circular;
