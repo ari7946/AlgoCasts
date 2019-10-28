@@ -60,6 +60,16 @@ class Tree {
       fn(node);
     }
   }
+
+  //! DF traversal is similar to BF except nodes are placed at start of the array
+  traverseDF(fn) {
+    const arr = [this.root];
+    while(arr.length) {
+      const node = arr.shift();
+      arr.unshift(...node.children);
+      fn(node);
+    }
+  }
 }
 
 module.exports = { Tree, Node };
