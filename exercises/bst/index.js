@@ -31,12 +31,19 @@ class Node {
   }
 
   contains(data) {
+    // if the root is equal to data passed, return "this" node
     if (this.data === data) {
       return this;
+
+    // if there's a right node, check if the right node "contains" data, recursively 
     } else if (this.data < data && this.right) {
       return this.right.contains(data);
+
+    // if there's a left node, check if left node "contains" data passed, recursively.
     } else if (this.data > data && this.left) {
       return this.left.contains(data);
+
+    // if data value does not match any nodes, return null
     } else {
       return null
     }
