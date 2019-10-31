@@ -19,7 +19,7 @@ function bubbleSort(arr) {
 }
 
 function selectionSort(arr) {
-
+  
 }
 
 function mergeSort(arr) {
