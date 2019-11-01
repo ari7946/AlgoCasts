@@ -10,10 +10,16 @@
 // on the tree class.  Each method should accept a
 // function that gets called with each element in the tree
 
+//TODO The methods on the Node class "add" and "remove"
+// do not work with pythontutor. I suspect it is because in the add node we are
+// creating a new instance of node inside its own method. I would like to
+// write the code in a way that the "add" and the "remove" methods are in the tree class.
+// The key thing to consider that we need to add a way to look up the node in the tree that we want to add the data passed in.
+// comments will be updated as soon as I have a better understanding of do such implementation.
 class Node {
   constructor(data) {
     this.data = data;
-    this.children = [];
+    this.children = []
   }
 
   add(data) {
@@ -24,7 +30,6 @@ class Node {
   remove(data) {
     this.children = this.children.filter(node => node.data !== data);
   }
-
 }
 
 class Tree {
