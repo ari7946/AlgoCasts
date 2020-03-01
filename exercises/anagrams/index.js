@@ -8,24 +8,24 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 //! ****reference code: creates character map
-// function maxChar(str) {
-//   const charMap = {};
-//   let max = 0;
-//   let maxChar = '';
+function maxChar(str) {
+  const charMap = {};
+  let max = 0;
+  let maxChar = '';
 
-//   for (let char of str) {
-//     // chars[char] = chars[char] + 1 || 1
-//     charMap[char] = charMap[char] ? charMap[char] + 1 : 1;
-//   }
+  for (let char of str) {
+    // chars[char] = chars[char] + 1 || 1
+    charMap[char] = charMap[char] ? charMap[char] + 1 : 1;
+  }
 
-//   for (let char in charMap) {
-//     if (charMap[char] > max) {
-//       max = charMap[char];
-//       maxChar = char;
-//     }
-//   }
-//   return maxChar
-// }
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
+    }
+  }
+  return maxChar
+}
 //! end of reference code to create characater map.
 
 // function anagrams(stringA, stringB) {

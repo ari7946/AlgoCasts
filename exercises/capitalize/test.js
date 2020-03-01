@@ -1,4 +1,4 @@
-const capitalize = require('./index');
+gitconst capitalize = require('./index');
 
 test('Capitalize is a function', () => {
   expect(typeof capitalize).toEqual('function');

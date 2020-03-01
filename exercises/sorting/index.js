@@ -67,7 +67,13 @@ function merge(left, right) {
   }
   return [...results, ...left, ...right];
 }
+
+function merged(left, right) {
+  const results = [];
+  while(left.length && right.lengthjp)
+}
+
 //! Pythontutor link for above solution 
-//http://www.pythontutor.com/javascript.html#code=function%20mergeSort%28arr%29%20%7B%0A%20%20if%20%28arr.length%20%3D%3D%3D%201%29%20%7B%0A%20%20%20%20return%20arr%3B%0A%20%20%7D%0A%20%20const%20center%20%3D%20Math.floor%28arr.length%20/%202%29%3B%0A%20%20const%20left%20%3D%20arr.slice%280,%20center%29%3B%0A%20%20const%20right%20%3D%20arr.slice%28center%29%3B%0A%0A%20%20return%20merge%28mergeSort%28left%29,%20mergeSort%28right%29%29%3B%0A%7D%0A%0Afunction%20merge%28left,%20right%29%20%7B%0A%20%20const%20results%20%3D%20%5B%5D%3B%0A%20%20while%20%28left.length%20%26%26%20right.length%29%20%7B%0A%20%20%20%20left%5B0%5D%20%3C%20right%5B0%5D%0A%20%20%20%20%20%20%3F%20results.push%28left.shift%28%29%29%0A%20%20%20%20%20%20%3A%20results.push%28right.shift%28%29%29%3B%0A%20%20%7D%0A%20%20return%20%5B...results,%20...left,%20...right%5D%3B%0A%7D%0A%0A%0AmergeSort%28%5B10,%200,%2097,%20-30,%205%5D%29%3B&curInstr=1&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D
+// http://www.pythontutor.com/javascript.html#code=function%20mergeSort%28arr%29%20%7B%0A%20%20if%20%28arr.length%20%3D%3D%3D%201%29%20%7B%0A%20%20%20%20return%20arr%3B%0A%20%20%7D%0A%20%20const%20center%20%3D%20Math.floor%28arr.length%20/%202%29%3B%0A%20%20const%20left%20%3D%20arr.slice%280,%20center%29%3B%0A%20%20const%20right%20%3D%20arr.slice%28center%29%3B%0A%0A%20%20return%20merge%28mergeSort%28left%29,%20mergeSort%28right%29%29%3B%0A%7D%0A%0Afunction%20merge%28left,%20right%29%20%7B%0A%20%20const%20results%20%3D%20%5B%5D%3B%0A%20%20while%20%28left.length%20%26%26%20right.length%29%20%7B%0A%20%20%20%20left%5B0%5D%20%3C%20right%5B0%5D%0A%20%20%20%20%20%20%3F%20results.push%28left.shift%28%29%29%0A%20%20%20%20%20%20%3A%20results.push%28right.shift%28%29%29%3B%0A%20%20%7D%0A%20%20return%20%5B...results,%20...left,%20...right%5D%3B%0A%7D%0A%0A%0AmergeSort%28%5B10,%200,%2097,%20-30,%205%5D%29%3B&curInstr=1&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D
 
 module.exports = { bubbleSort, selectionSort, mergeSort, merge };
